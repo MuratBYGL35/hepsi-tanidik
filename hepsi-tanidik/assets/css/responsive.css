@@ -1,0 +1,43 @@
+@media (max-width: 1440px) {
+    .tutucuwrap {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .tutucuwrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-social {
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-contact {
+        margin-bottom: 20px;
+    }
+
+    .tab-content {
+        margin-top: 20px;
+    }
+
+    .anasayfa-slider img {
+        height: 60vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 5px 0px;
+    }
+}
