@@ -144,10 +144,48 @@
             </div>
         </div>
     </footer>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="modalVideo" style="width: 100%;" controls autoplay loop playsinline >
+                        <source src="assets/images/hepsi-tanidik.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/slick.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modalEl = document.getElementById("exampleModal");
+            var modal = new bootstrap.Modal(modalEl);
+            var video = document.getElementById("modalVideo");
+    
+            // Sayfa açıldığında modalı göster
+            modal.show();
+    
+            // Modal açıldığında videoyu başlat
+            modalEl.addEventListener("shown.bs.modal", function () {
+                video.play().catch(error => console.log("Otomatik oynatma engellendi:", error));
+            });
+    
+            // Modal kapatılınca videoyu durdur
+            modalEl.addEventListener("hidden.bs.modal", function () {
+                video.pause();
+                video.currentTime = 0; // Videoyu başa sar
+            });
+        });
+    </script>
 </body>
 
 </html>
